@@ -223,7 +223,7 @@ document.addEventListener("DOMContentLoaded", function () {
         try {
             const response = await fetch("https://api64.ipify.org?format=json"); // Supports IPv6 & IPv4
             const data = await response.json();
-            if (response.status === 200) {
+            if (response.status === 200 && data.ip) {
                 ipElement.textContent = data.ip
             } else {
                 ipElement.textContent = "IP Unavailable"
