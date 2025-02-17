@@ -254,3 +254,18 @@ section {
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+/* Feature Title */
+.service-card .service-title {
+    font-size: 1.2rem; /* Reduced title size */
+    font-weight: bold;
+    color: #fff;
+    transition: all 0.4s ease-in-out;
+}
+
+/* Gradient effect for title on hover */
+.service-card:hover .service-title {
+    background: linear-gradient(to right, #8B5CF6, #EC4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
