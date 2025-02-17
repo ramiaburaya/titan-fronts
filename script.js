@@ -110,6 +110,7 @@ const serviceDetails = {
                 </ul>`
     }
 };
+
 document.addEventListener("DOMContentLoaded", function () {
     // Dynamic Year in Footer
     document.getElementById("year").textContent = new Date().getFullYear();
@@ -189,6 +190,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.body.addEventListener("click", function (event) {
         const target = event.target.closest(".service-card");
+        window.location.href = window.location.href.split("#")[0] + "#services";
         if (target && modal) {
             const serviceType = target.getAttribute("data-service");
             const service = serviceDetails[serviceType];
@@ -221,12 +223,19 @@ document.addEventListener("DOMContentLoaded", function () {
         try {
             const response = await fetch("https://api64.ipify.org?format=json"); // Supports IPv6 & IPv4
             const data = await response.json();
-            ipElement.textContent = data.ip;
+            if (response.status === 200) {
+                ipElement.textContent = data.ip
+            } else {
+                ipElement.textContent = "IP Unavailable"
+
+            }
+
         } catch (error) {
             ipElement.textContent = "Unavailable";
             console.error("Error fetching IP:", error);
         }
     }
+
 
     fetchVisitorIP();
 });
