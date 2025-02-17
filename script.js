@@ -213,4 +213,20 @@ document.addEventListener("DOMContentLoaded", function () {
             modal.classList.add("hidden");
         }
     });
+
+    // Function to fetch visitor's IP securely
+    async function fetchVisitorIP() {
+        const ipElement = document.getElementById("visitor-ip");
+
+        try {
+            const response = await fetch("https://api64.ipify.org?format=json"); // Supports IPv6 & IPv4
+            const data = await response.json();
+            ipElement.textContent = data.ip;
+        } catch (error) {
+            ipElement.textContent = "Unavailable";
+            console.error("Error fetching IP:", error);
+        }
+    }
+
+    fetchVisitorIP();
 });
