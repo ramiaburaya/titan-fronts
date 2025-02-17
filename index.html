@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Titan Shield</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <!-- Google Fonts for Professional Styling -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body class="bg-black text-gray-100 font-sans">
+
+<!-- Fixed Navbar -->
+<nav class=" fixed top-0 left-0 right-0 z-50 bg-gray-900 shadow-md">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <!-- Logo on the left -->
+        <a href="#hero" class="flex items-center space-x-2">
+            <img src="images/Logo 2.png" alt="Titan Shield Logo" class="h-12 w-auto"/>
+        </a>
+
+        <!-- Add this before navigation links -->
+        <button id="menu-toggle" class="block md:hidden text-white focus:outline-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+
+        <!-- Wrap links inside a mobile menu -->
+        <div id="mobile-menu"
+             class="absolute top-16 left-0 w-full bg-gray-900 shadow-md md:hidden hidden flex-col items-center space-y-4 py-4">
+            <a href="#hero" class="text-gray-300 hover:text-white">Home</a>
+            <a href="#why-us" class="text-gray-300 hover:text-white">Why Us</a>
+            <a href="#services" class="text-gray-300 hover:text-white">Our Services</a>
+            <a href="#industries" class="text-gray-300 hover:text-white">Industries</a>
+            <a href="#contact" class="text-gray-300 hover:text-white">Contact</a>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="flex space-x-6">
+            <a href="#hero"
+               class=" gradient-text text-gray-300 hover:text-white transition-all border-b-2 border-transparent hover:border-purple-400 pb-1">Home</a>
+            <!--            <a href="#welcome"-->
+            <!--               class="text-gray-300 hover:text-white transition-all border-b-2 border-transparent hover:border-purple-400 pb-1">Welcome</a>-->
+            <a href="#why-us"
+               class="text-gray-300 hover:text-white transition-all border-b-2 border-transparent hover:border-purple-400 pb-1">Why
+                Us</a>
+            <a href="#services"
+               class="text-gray-300 hover:text-white transition-all border-b-2 border-transparent hover:border-purple-400 pb-1">Our
+                Services</a>
+            <a href="#industries"
+               class="text-gray-300 hover:text-white transition-all border-b-2 border-transparent hover:border-purple-400 pb-1">Industries</a>
+            <a href="#contact"
+               class="text-gray-300 hover:text-white transition-all border-b-2 border-transparent hover:border-purple-400 pb-1">Contact</a>
+        </div>
+    </div>
+</nav>
+
+
+<!-- Main Content -->
+<main class="h-screen overflow-y-scroll pt-20">
+    <!-- HERO SECTION -->
+    <section id="hero"
+             class="min-h-screen flex flex-col items-center justify-center text-center px-6 py-12 relative bg-cover bg-center transition-all duration-1000">
+        <div class="fadeInUp max-w-3xl">
+
+            <div class="absolute top-0 left-0 w-1/3 h-1/3 bg-gradient-to-br from-purple-500 via-pink-500 to-transparent rounded-full blur-3xl opacity-30 moving-light"></div>
+
+            <!-- Moving Gradient Spotlight in Bottom-Right Corner -->
+            <div class="absolute bottom-0 right-0 w-1/3 h-1/3 bg-gradient-to-br from-pink-500 via-purple-500 to-transparent rounded-full blur-3xl opacity-30 moving-light"></div>
+
+            <div class="max-w-4xl text-left relative z-10">
+                <!-- Title with gradient text -->
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-6">Welcome to Titan Shield</h2>
+                <!-- Typing Effect Container -->
+                <h3 id="typing-text" class="text-3xl md:text-4xl font-bold gradient-text mb-4"></h3>
+                <!-- Subtext -->
+                <p class="text-lg md:text-xl leading-relaxed text-gray-300">
+                    Titan Shield is a premier cybersecurity firm committed to safeguarding businesses from
+                    ever-evolving digital threats. We provide comprehensive security solutions tailored to
+                    protect your organization’s most valuable assets.
+                </p>
+
+                <!-- Divider for better separation -->
+                <div class="w-16 h-1 bg-purple-500 my-6"></div>
+
+                <!-- Additional Information -->
+                <p class="text-lg md:text-xl leading-relaxed text-gray-300">
+                    Whether you’re a startup, enterprise, or multinational corporation, we help you stay
+                    ahead of cyber risks, ensuring resilience, compliance, and uninterrupted growth.
+                </p>
+            </div>
+
+            <!-- Call to Action Button -->
+            <a href="#services" class="mt-6 inline-block btn-gradient text-white shadow-lg hover:shadow-purple-500/50">
+                Get Started
+            </a>
+        </div>
+    </section>
+
+
+    <!-- WHY CHOOSE US SECTION -->
+    <section id="why-us"
+             class="relative min-h-screen flex flex-col items-center justify-center fadeInUp px-8 py-12 bg-gray-900 overflow-hidden">
+
+        <!-- Moving Gradient Spotlight in Top-Left Corner -->
+        <div class="absolute top-0 left-0 w-1/3 h-1/3 bg-gradient-to-br from-purple-500 via-pink-500 to-transparent rounded-full blur-3xl opacity-30 moving-light"></div>
+
+        <!-- Moving Gradient Spotlight in Bottom-Right Corner -->
+        <div class="absolute bottom-0 right-0 w-1/3 h-1/3 bg-gradient-to-br from-pink-500 via-purple-500 to-transparent rounded-full blur-3xl opacity-30 moving-light"></div>
+
+        <!-- Section Title -->
+        <div class="max-w-4xl text-center relative z-10">
+            <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-6">Why Choose Titan Shield?</h2>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 relative z-10">
+
+            <!-- Feature Card 1 -->
+            <div class="feature-card">
+                <div class="icon">🔒</div>
+                <h4 class="feature-title">Expert-Led Security</h4>
+                <p>A team of seasoned cybersecurity professionals with proven expertise.</p>
+            </div>
+
+            <!-- Feature Card 2 -->
+            <div class="feature-card">
+                <div class="icon">🛡️</div>
+                <h4 class="feature-title">Comprehensive Protection</h4>
+                <p>A holistic approach covering risk assessment, prevention, and response.</p>
+            </div>
+
+            <!-- Feature Card 3 -->
+            <div class="feature-card">
+                <div class="icon">⚙️</div>
+                <h4 class="feature-title">Tailored Solutions</h4>
+                <p>Custom strategies that align with your business needs.</p>
+            </div>
+
+            <!-- Feature Card 4 -->
+            <div class="feature-card">
+                <div class="icon">⏳</div>
+                <h4 class="feature-title">24/7 Security Operations</h4>
+                <p>Round-the-clock monitoring and support.</p>
+            </div>
+
+            <!-- Feature Card 5 -->
+            <div class="feature-card">
+                <div class="icon">📜</div>
+                <h4 class="feature-title">Compliance & Risk Management</h4>
+                <p>Ensuring industry regulations are met with ease.</p>
+            </div>
+
+            <!-- Feature Card 6 -->
+            <div class="feature-card">
+                <div class="icon">🕵️‍♂️</div>
+                <h4 class="feature-title">Proactive Threat Hunting</h4>
+                <p>Staying ahead of cybercriminals with advanced intelligence.</p>
+            </div>
+
+        </div>
+    </section>
+    <!-- OUR SERVICES SECTION -->
+    <section id="services"
+             class="relative min-h-screen flex flex-col items-center justify-center fadeInUp px-8 py-12 bg-gray-900 overflow-hidden">
+
+        <!-- Moving Gradient Spotlight in Top-Left Corner -->
+        <div class="absolute top-0 left-0 w-1/3 h-1/3 bg-gradient-to-br from-purple-500 via-pink-500 to-transparent rounded-full blur-3xl opacity-30 moving-light"></div>
+
+        <!-- Moving Gradient Spotlight in Bottom-Right Corner -->
+        <div class="absolute bottom-0 right-0 w-1/3 h-1/3 bg-gradient-to-br from-pink-500 via-purple-500 to-transparent rounded-full blur-3xl opacity-30 moving-light"></div>
+
+        <h2 class="text-4xl font-bold gradient-text mb-6 text-center relative z-10">Our Services</h2>
+        <p class="text-lg text-gray-300 text-center mb-8 relative z-10">
+            We provide cutting-edge cybersecurity solutions tailored to protect businesses from digital threats.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl relative z-10">
+
+            <!-- Service Cards with Popups on Hover -->
+            <div class="industry-card service-card p-6 bg-gray-800 rounded-lg shadow-lg text-center cursor-pointer hover:shadow-purple-500/50"
+                 data-service="consulting">
+                <div class="text-4xl mb-4">🔍</div>
+                <h3 class="text-xl font-bold text-purple-400">Cybersecurity Consulting & Compliance</h3>
+                <p class="text-gray-300 text-sm mt-2">
+                    Helping businesses align with industry standards and best security practices.
+                </p>
+                <div class="service-popup hidden absolute bg-gray-900 text-white p-4 rounded shadow-lg w-80">
+                    <p>Titan Shield provides expert consulting to help businesses navigate cybersecurity risks and
+                        regulatory challenges. Our team ensures your organization meets compliance standards while
+                        strengthening your security posture.</p>
+                    <h4 class="font-bold mt-3">Risk & Vulnerability Management:</h4>
+                    <ul class="list-disc pl-5 text-sm">
+                        <li>Comprehensive risk assessments to identify weaknesses.</li>
+                        <li>Vulnerability scanning, prioritization, and remediation.</li>
+                        <li>Security gap analysis to align with industry best practices.</li>
+                    </ul>
+                    <h4 class="font-bold mt-3">Regulatory Compliance & Security Frameworks:</h4>
+                    <ul class="list-disc pl-5 text-sm">
+                        <li>ISO 27001, SOC 1 & 2, HIPAA, NIST, GDPR.</li>
+                        <li>Security policy development and implementation.</li>
+                        <li>Third-party vendor risk assessments and audits.</li>
+                    </ul>
+                    <h4 class="font-bold mt-3">Security Architecture & Strategy Consulting:</h4>
+                    <ul class="list-disc pl-5 text-sm">
+                        <li>Zero Trust framework and Identity Access Management (IAM).</li>
+                        <li>Secure Software Development Lifecycle (SSDLC).</li>
+                        <li>Business Continuity & Disaster Recovery (BCDR) planning.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="industry-card service-card p-6 bg-gray-800 rounded-lg shadow-lg text-center cursor-pointer hover:shadow-purple-500/50"
+                 data-service="mssp">
+                <div class="text-4xl mb-4">🛡️</div>
+                <h3 class="text-xl font-bold text-purple-400">Managed Security Services (MSSP)</h3>
+                <p class="text-gray-300 text-sm mt-2">
+                    24/7 monitoring, threat detection, and incident response services.
+                </p>
+            </div>
+
+            <div class="industry-card service-card p-6 bg-gray-800 rounded-lg shadow-lg text-center cursor-pointer hover:shadow-purple-500/50"
+                 data-service="offensive-security">
+                <div class="text-4xl mb-4">🎯</div>
+                <h3 class="text-xl font-bold text-purple-400">Offensive Security & Penetration Testing</h3>
+                <p class="text-gray-300 text-sm mt-2">
+                    Ethical hacking to identify vulnerabilities before attackers do.
+                </p>
+            </div>
+
+            <div class="industry-card service-card p-6 bg-gray-800 rounded-lg shadow-lg text-center cursor-pointer hover:shadow-purple-500/50"
+                 data-service="infrastructure">
+                <div class="text-4xl mb-4">🏗️</div>
+                <h3 class="text-xl font-bold text-purple-400">Technical Security & Infrastructure Protection</h3>
+                <p class="text-gray-300 text-sm mt-2">
+                    Strengthening networks, servers, and applications against cyber threats.
+                </p>
+            </div>
+
+            <div class="industry-card service-card p-6 bg-gray-800 rounded-lg shadow-lg text-center cursor-pointer hover:shadow-purple-500/50"
+                 data-service="training">
+                <div class="text-4xl mb-4">📚</div>
+                <h3 class="text-xl font-bold text-purple-400">Cybersecurity Training & Awareness</h3>
+                <p class="text-gray-300 text-sm mt-2">
+                    Educating employees to recognize and respond to security threats effectively.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Modal Popup -->
+    <div id="service-modal"
+         class="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-75 hidden p-6">
+        <div class="bg-gray-800 p-10 rounded-xl shadow-2xl max-w-3xl w-full md:w-3/4 lg:w-2/3 relative">
+            <button id="close-modal" class="absolute top-6 right-6 text-white text-3xl btn-gradient-close">&times;
+            </button>
+            <h3 id="modal-title" class="text-3xl font-extrabold text-purple-400 mb-8"></h3>
+            <p id="modal-content" class="text-gray-300 text-lg leading-relaxed"></p>
+        </div>
+    </div>
+
+
+    <!-- INDUSTRIES SECTION -->
+    <section id="industries"
+             class="relative min-h-screen flex flex-col items-center justify-center fadeInUp px-8 py-12 bg-gray-900 overflow-hidden">
+
+        <!-- Moving Gradient Spotlight in Top-Left Corner -->
+        <div class="absolute top-0 left-0 w-1/3 h-1/3 bg-gradient-to-br from-purple-500 via-pink-500 to-transparent rounded-full blur-3xl opacity-30 moving-light"></div>
+
+        <!-- Moving Gradient Spotlight in Bottom-Right Corner -->
+        <div class="absolute bottom-0 right-0 w-1/3 h-1/3 bg-gradient-to-br from-pink-500 via-purple-500 to-transparent rounded-full blur-3xl opacity-30 moving-light"></div>
+
+        <h2 class="text-4xl font-bold gradient-text mb-6 text-center relative z-10">Industries We Protect</h2>
+        <p class="text-lg text-gray-300 text-center mb-8 relative z-10">
+            We provide industry-specific security solutions to help businesses mitigate cyber risks and meet regulatory
+            requirements.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl relative z-10">
+
+            <!-- Industry Cards -->
+            <div class="industry-card p-6 bg-gray-800 rounded-lg shadow-lg text-center  hover:shadow-purple-500/50">
+                <div class="text-4xl mb-4">💰</div>
+                <h3 class="text-xl font-bold text-purple-400">Finance & Banking</h3>
+                <p class="text-gray-300 text-sm mt-2">Prevent fraud, secure transactions, and protect financial
+                    data.</p>
+            </div>
+
+            <div class="industry-card p-6 bg-gray-800 rounded-lg shadow-lg text-center  hover:shadow-purple-500/50">
+                <div class="text-4xl mb-4">🏥</div>
+                <h3 class="text-xl font-bold text-purple-400">Healthcare</h3>
+                <p class="text-gray-300 text-sm mt-2">HIPAA-compliant security solutions for patient data
+                    protection.</p>
+            </div>
+
+            <div class="industry-card p-6 bg-gray-800 rounded-lg shadow-lg text-center  hover:shadow-purple-500/50">
+                <div class="text-4xl mb-4">🛒</div>
+                <h3 class="text-xl font-bold text-purple-400">E-commerce & Retail</h3>
+                <p class="text-gray-300 text-sm mt-2">Secure online payments and prevent cyber fraud.</p>
+            </div>
+
+            <div class="industry-card p-6 bg-gray-800 rounded-lg shadow-lg text-center  hover:shadow-purple-500/50">
+                <div class="text-4xl mb-4">🏛️</div>
+                <h3 class="text-xl font-bold text-purple-400">Government & Defense</h3>
+                <p class="text-gray-300 text-sm mt-2">National security-grade solutions for public institutions.</p>
+            </div>
+
+            <div class="industry-card p-6 bg-gray-800 rounded-lg shadow-lg text-center  hover:shadow-purple-500/50">
+                <div class="text-4xl mb-4">💻</div>
+                <h3 class="text-xl font-bold text-purple-400">Technology & SaaS</h3>
+                <p class="text-gray-300 text-sm mt-2">Securing cloud applications, API security, and DevSecOps.</p>
+            </div>
+
+            <div class="industry-card p-6 bg-gray-800 rounded-lg shadow-lg text-center hover:shadow-purple-500/50">
+                <div class="text-4xl mb-4">🏭</div>
+                <h3 class="text-xl font-bold text-purple-400">Manufacturing & Industrial</h3>
+                <p class="text-gray-300 text-sm mt-2">Protecting critical infrastructure, ICS/SCADA security.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CONTACT SECTION -->
+    <section id="contact"
+             class="relative min-h-screen flex items-center justify-center px-8 py-12 bg-gray-900 overflow-hidden">
+
+        <!-- Moving Gradient Spotlight in Top-Left Corner -->
+        <div class="absolute top-0 left-0 w-1/3 h-1/3 bg-gradient-to-br from-purple-500 via-pink-500 to-transparent rounded-full blur-3xl opacity-30 moving-light"></div>
+
+        <!-- Moving Gradient Spotlight in Bottom-Right Corner -->
+        <div class="absolute bottom-0 right-0 w-1/3 h-1/3 bg-gradient-to-br from-pink-500 via-purple-500 to-transparent rounded-full blur-3xl opacity-30 moving-light"></div>
+
+        <div class="relative z-10 max-w-6xl w-full bg-gray-800 p-10 rounded-lg shadow-lg flex flex-col md:flex-row gap-8">
+
+            <!-- Left Side: Contact Information -->
+            <div class="w-full md:w-1/2 space-y-6">
+                <h2 class="text-4xl font-bold gradient-text">Get in Touch</h2>
+                <p class="text-lg text-gray-300">
+                    Let’s Secure Your Business Today! Contact us for a free security assessment and discover how Titan
+                    Shield can fortify your organization.
+                </p>
+
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <span class="text-3xl text-purple-400">📍</span>
+                        <p class="text-lg">4th Floor, Hamel Center, Office No. 3, Al-Bireh, Palestine</p>
+                    </div>
+
+                    <div class="flex items-center space-x-4">
+                        <span class="text-3xl text-purple-400">📧</span>
+                        <p class="text-lg">
+                            <a href="mailto:info@titanshield.ps" class="text-purple-400 hover:underline">info@titanshield.ps</a>
+                        </p>
+                    </div>
+
+                    <div class="flex items-center space-x-4">
+                        <span class="text-3xl text-purple-400">📞</span>
+                        <p class="text-lg">
+                            <a href="tel:+970562420040" class="text-purple-400 hover:underline">+970 (562) 420040</a>
+                        </p>
+                    </div>
+
+                    <div class="flex items-center space-x-4">
+                        <span class="text-3xl text-purple-400">🌐</span>
+                        <p class="text-lg">
+                            <a href="https://www.titanshield.ps" target="_blank"
+                               class="text-purple-400 hover:underline">www.titanshield.ps</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Contact Form -->
+            <div class="w-full md:w-1/2 bg-gray-700 p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-bold text-white mb-4">Send Us a Message</h3>
+
+                <form action="#" method="POST" class="space-y-4">
+                    <div>
+                        <label class="block text-gray-300 text-sm mb-1">Your Name</label>
+                        <input type="text" placeholder="Enter your name"
+                               class="w-full px-4 py-2 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-300 text-sm mb-1">Your Email</label>
+                        <input type="email" placeholder="Enter your email"
+                               class="w-full px-4 py-2 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-300 text-sm mb-1">Message</label>
+                        <textarea rows="4" placeholder="Enter your message"
+                                  class="w-full px-4 py-2 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"></textarea>
+                    </div>
+
+                    <button type="submit"
+                            class="btn-gradient w-full py-3 text-white font-bold rounded-lg shadow-lg hover:shadow-purple-500/50">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER SECTION -->
+    <footer class="bg-gray-900 text-gray-300 py-6">
+
+        <div class="text-center text-sm text-gray-400 mt-4">
+            &copy; <span id="year"></span> Titan Shield. All rights reserved.
+        </div>
+    </footer>
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
