@@ -110,42 +110,48 @@ const serviceDetails = {
                 </ul>`
     }
 };
-
 document.addEventListener("DOMContentLoaded", function () {
     // Dynamic Year in Footer
     document.getElementById("year").textContent = new Date().getFullYear();
 
     // Typing Effect with Blinking Cursor
+    const typingText = document.getElementById("typing-text");
     const text = "Security In Every Byte!";
     let index = 0;
-    const typingText = document.getElementById("typing-text");
 
     function typeEffect() {
-        typingText.innerHTML = ""; // Clear previous text before typing starts
+        typingText.innerHTML = ""; // Clear text before restart
         index = 0;
 
         function type() {
             if (index < text.length) {
-                typingText.innerHTML = text.substring(0, index) + '<span class="cursor">|</span>'; // Add cursor while typing
+                typingText.innerHTML = text.substring(0, index + 1) + '<span class="cursor">|</span>';
                 index++;
-                setTimeout(type, 200); // Typing speed
+                requestAnimationFrame(() => setTimeout(type, 100)); // Smoother animation
             } else {
-                typingText.innerHTML = text; // Remove cursor after typing is complete
+                typingText.innerHTML = text; // Remove cursor when done
             }
         }
 
         type();
     }
 
-    setTimeout(typeEffect, 500); // Initial delay before first typing effect
-    setInterval(typeEffect, 15000); // Restart typing effect every 15 seconds
+    setTimeout(typeEffect, 500);
+    setInterval(typeEffect, 12000); // Restart effect every 12s
 
-    // Navbar Scroll Effect
-    window.addEventListener("scroll", function () {
-        document.querySelector("nav").classList.toggle("scrolled", window.scrollY > 50);
-    });
+    // Navbar Scroll Effect with Debouncing
+    let lastScrollY = window.scrollY;
 
-    // Background Rotation
+    function handleScroll() {
+        if (Math.abs(lastScrollY - window.scrollY) > 5) {
+            document.querySelector("nav").classList.toggle("scrolled", window.scrollY > 50);
+            lastScrollY = window.scrollY;
+        }
+    }
+
+    window.addEventListener("scroll", () => requestAnimationFrame(handleScroll), {passive: true});
+
+    // Background Image Rotation
     const heroSection = document.getElementById("hero");
     const heroImages = [
         "url('images/security1.jpeg')",
@@ -153,43 +159,58 @@ document.addEventListener("DOMContentLoaded", function () {
         "url('images/security3.jpeg')",
         "url('images/security4.jpeg')"
     ];
-
     let imageIndex = 0;
 
     function changeHeroBackground() {
+        if (!heroSection) return;
         heroSection.style.backgroundImage = heroImages[imageIndex];
         imageIndex = (imageIndex + 1) % heroImages.length;
     }
 
-    setInterval(changeHeroBackground, 5000); // Change background every 5 seconds
-    changeHeroBackground(); // Set the initial background
-    document.getElementById("menu-toggle").addEventListener("click", function () {
-        document.getElementById("mobile-menu").classList.toggle("hidden");
-    });
+    setInterval(changeHeroBackground, 5000);
+    changeHeroBackground();
 
-});
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
 
-document.addEventListener("DOMContentLoaded", function () {
-    const serviceCards = document.querySelectorAll(".service-card");
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+            menuToggle.setAttribute("aria-expanded", mobileMenu.classList.contains("hidden") ? "false" : "true");
+        });
+    }
+
+    // Service Modal Handling (Event Delegation)
     const modal = document.getElementById("service-modal");
     const modalTitle = document.getElementById("modal-title");
     const modalContent = document.getElementById("modal-content");
     const closeModal = document.getElementById("close-modal");
 
-
-    serviceCards.forEach(card => {
-        card.addEventListener("click", function () {
-            const serviceType = this.getAttribute("data-service");
+    document.body.addEventListener("click", function (event) {
+        const target = event.target.closest(".service-card");
+        if (target && modal) {
+            const serviceType = target.getAttribute("data-service");
             const service = serviceDetails[serviceType];
-            modalTitle.textContent = service.title;
-            modalContent.innerHTML = service.content;
-            modal.classList.remove("hidden");
-        });
+
+            if (service) {
+                modalTitle.textContent = service.title;
+                modalContent.innerHTML = service.content;
+                modal.classList.remove("hidden");
+                modal.setAttribute("aria-hidden", "false");
+            }
+        }
+
+        if (event.target === closeModal || event.target.closest(".modal-overlay")) {
+            modal.classList.add("hidden");
+            modal.setAttribute("aria-hidden", "true");
+        }
     });
 
-    closeModal.addEventListener("click", function () {
-        modal.classList.add("hidden");
+    // Close Modal on Escape Key
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && !modal.classList.contains("hidden")) {
+            modal.classList.add("hidden");
+        }
     });
 });
-
-
